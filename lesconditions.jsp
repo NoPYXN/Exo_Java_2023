@@ -40,9 +40,9 @@
     </form>
 
     <%-- Récupération des valeurs --%>
-    <% String valeur1Exo1 = request.getParameter("valeurExo11"); %>
-    <% String valeur2Exo1 = request.getParameter("valeurExo12"); %>
-    <% String valeur3Exo1 = request.getParameter("valeurExo13"); %>
+    <% String valeur1Exo1 = request.getParameter("valeur1Exo1"); %>
+    <% String valeur2Exo1 = request.getParameter("valeur2Exo1"); %>
+    <% String valeur3Exo1 = request.getParameter("valeur3Exo1"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
     <% if (valeurExo11 != null && valeurExo12 != null && valeurExo13 != null) { %>
