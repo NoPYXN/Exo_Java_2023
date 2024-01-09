@@ -41,15 +41,23 @@ Oui C est compris entre A et B</p>
 
 <h2>Exercice 1 : Réponse</h2>
 
-A = float(input("Entrez la valeur de A : "))
-B = float(input("Entrez la valeur de B : "))
-C = float(input("Entrez la valeur de C : "))
 
-# Vérifier si C est compris entre A et B
-if A <= C <= B:
-    print("Oui, C est compris entre A et B.")
-else:
-    print("Non, C n'est pas compris entre A et B.")
+<form action="#" method="post">
+    <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeurexo11">
+    <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeurexo12">
+    <p>Saisir la valeur 3 : <input type="text" id="inputValeur" name="valeurexo13">
+    <p><input type="submit" value="Afficher">
+</form>
+
+<% String valeurexo11 = request.getParameter("valeurexo11"); %>
+<% String valeurexo12 = request.getParameter("valeurexo12"); %>
+<% String valeurexo13 = request.getParameter("valeurexo13"); %>
+
+<% if (intValeur3 >= intValeur1 && intValeur3 <= intValeur2) { %>
+    <p>Valeur 3 est comprise entre Valeur 1 et Valeur 2.</p>
+<% } else { %>
+    <p>Valeur 3 n'est pas comprise entre Valeur 1 et Valeur 2.</p>
+<% } %>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
