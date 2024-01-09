@@ -31,18 +31,18 @@
             <p>Valeur 1 est égale à Valeur 2.</p>
         <% } %>
     <% } %>
-    <h2>Exercice 1 : Comparaison 1</h2>
+    <h2>Exercice 1 : Réponse</h2>
     <form action="#" method="post">
-        <p>Saisir la valeur A : <input type="text" id="inputValeurA" name="valeurA"></p>
-        <p>Saisir la valeur B : <input type="text" id="inputValeurB" name="valeurB"></p>
-        <p>Saisir la valeur C : <input type="text" id="inputValeurC" name="valeurC"></p>
+        <p>Saisir la valeur A : <input type="text" id="inputValeurExo11" name="valeurExo11"></p>
+        <p>Saisir la valeur B : <input type="text" id="inputValeurExo12" name="valeurExo12"></p>
+        <p>Saisir la valeur C : <input type="text" id="inputValeurExo13" name="valeurExo13"></p>
         <p><input type="submit" value="Afficher"></p>
     </form>
 
     <%-- Récupération des valeurs --%>
-    <% String valeurA = request.getParameter("valeurA"); %>
-    <% String valeurB = request.getParameter("valeurB"); %>
-    <% String valeurC = request.getParameter("valeurC"); %>
+    <% String valeurExo11 = request.getParameter("valeurExo11"); %>
+    <% String valeurExo12 = request.getParameter("valeurExo12"); %>
+    <% String valeurExo13 = request.getParameter("valeurExo13"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
     <% if (valeurA != null && valeurB != null && valeurC != null) { %>
