@@ -111,12 +111,12 @@
 
 
 <h2>Exercice 5 : Triangle isocele</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
+<p>Ecrire le code afin de produire un triangle isocele aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;***</br>&nbsp;****</br>*****</p>
 
 <h2>Exercice 5 : Réponse </h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
+<p>Ecrire le code afin de produire un triangle isocele aligné sur la droite</p>
 <%
    for (int i = 1; i <= cpt; i++) {
        for (int j = 1; j <= cpt - i; j++) {
