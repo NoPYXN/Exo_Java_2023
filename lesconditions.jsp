@@ -54,7 +54,7 @@
         <%-- Condition if pour vérifier si la valeur de C est comprise entre A et B --%>
         <% if (intValeurC >= intValeurA && intValeurC <= intValeurB) { %>
             <p>Oui, C est compris entre A et B.</p>
-        <% } elseif (intValeurC >= intValeurB && intValeurC <= intValeurA) { %>
+        <% } else if (intValeurC >= intValeurB && intValeurC <= intValeurA) { %>
             <p>Oui, C est compris entre A et B.</p>
         <% } %> else { %>
             <p>Non, C n'est pas compris entre A et B.</p>
