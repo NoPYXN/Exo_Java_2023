@@ -39,6 +39,18 @@ B = 20</br>
 C = 15</br>
 Oui C est compris entre A et B</p>
 
+<h2>Exercice 1 : Réponse</h2>
+
+A = float(input("Entrez la valeur de A : "))
+B = float(input("Entrez la valeur de B : "))
+C = float(input("Entrez la valeur de C : "))
+
+# Vérifier si C est compris entre A et B
+if A <= C <= B:
+    print("Oui, C est compris entre A et B.")
+else:
+    print("Non, C n'est pas compris entre A et B.")
+
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 
