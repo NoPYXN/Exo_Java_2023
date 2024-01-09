@@ -45,11 +45,11 @@
     <% String valeur3Exo1 = request.getParameter("valeur3Exo1"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
-    <% if (valeurExo11 != null && valeurExo12 != null && valeurExo13 != null) { %>
+    <% if (valeur1Exo1 != null && valeur2Exo1 != null && valeur3Exo1 != null) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int valeur1Exo1 = Integer.parseInt(valeurA); %>
-        <% int valeur2Exo1 = Integer.parseInt(valeurB); %>
-        <% int valeur3Exo1 = Integer.parseInt(valeurC); %>
+        <% int valeur1Exo1 = Integer.parseInt(valeur1Exo1); %>
+        <% int valeur2Exo1 = Integer.parseInt(valeur2Exo1); %>
+        <% int valeur3Exo1 = Integer.parseInt(valeur3Exo1); %>
 
         <% if (valeur3Exo1 >= valeur1Exo1 && valeur3Exo1 <= valeur2Exo1) { %>
             <p>Oui, C est compris entre A et B.</p>
