@@ -31,29 +31,30 @@
             <p>Valeur 1 est égale à Valeur 2.</p>
         <% } %>
     <% } %>
-    <h2>Exercice 1 : Réponse</h2>
+    <h2>Exercice 1 : Comparaison 1</h2>
     <form action="#" method="post">
-        <p>Saisir la valeur A : <input type="text" id="inputValeur1Exo1" name="valeur1Exo1"></p>
-        <p>Saisir la valeur B : <input type="text" id="inputValeur2Exo1" name="valeur2Exo1"></p>
-        <p>Saisir la valeur C : <input type="text" id="inputValeur3Exo1" name="valeur3Exo1"></p>
+        <p>Saisir la valeur A : <input type="text" id="inputValeurA" name="valeurA"></p>
+        <p>Saisir la valeur B : <input type="text" id="inputValeurB" name="valeurB"></p>
+        <p>Saisir la valeur C : <input type="text" id="inputValeurC" name="valeurC"></p>
         <p><input type="submit" value="Afficher"></p>
     </form>
 
     <%-- Récupération des valeurs --%>
-    <% String valeur1Exo1 = request.getParameter("valeur1Exo1"); %>
-    <% String valeur2Exo1 = request.getParameter("valeur2Exo1"); %>
-    <% String valeur3Exo1 = request.getParameter("valeur3Exo1"); %>
+    <% String valeurA = request.getParameter("valeurA"); %>
+    <% String valeurB = request.getParameter("valeurB"); %>
+    <% String valeurC = request.getParameter("valeurC"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
-    <% if (valeur1Exo1 != null && valeur2Exo1 != null && valeur3Exo1 != null) { %>
+    <% if (valeurA != null && valeurB != null && valeurC != null) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int valeur1Exo1 = Integer.parseInt(valeur1Exo1); %>
-        <% int valeur2Exo1 = Integer.parseInt(valeur2Exo1); %>
-        <% int valeur3Exo1 = Integer.parseInt(valeur3Exo1); %>
+        <% int intValeurA = Integer.parseInt(valeurA); %>
+        <% int intValeurB = Integer.parseInt(valeurB); %>
+        <% int intValeurC = Integer.parseInt(valeurC); %>
 
-        <% if (valeur3Exo1 >= valeur1Exo1 && valeur3Exo1 <= valeur2Exo1) { %>
+        <%-- Condition if pour vérifier si la valeur de C est comprise entre A et B --%>
+        <% if (intValeurC >= intValeurA && intValeurC <= intValeurB) { %>
             <p>Oui, C est compris entre A et B.</p>
-        <% } else if (valeur3Exo1 >= valeur2Exo1 && valeur3Exo1 <= valeur1Exo1) { %>
+        <% } else if (intValeurC >= intValeurB && intValeurC <= intValeurA) { %>
             <p>Oui, C est compris entre A et B.</p>
         <% } else { %>
             <p>Non, C n'est pas compris entre A et B.</p>
