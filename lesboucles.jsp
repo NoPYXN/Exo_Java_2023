@@ -117,24 +117,31 @@
 
 <h2>Exercice 5 : Réponse </h2>
 <p>Ecrire le code afin de produire un triangle isocele aligné sur la droite</p>
-<%
-   for (int i = 1; i <= cpt; i++) {
-       for (int j = 1; j <= cpt - i; j++) {
-%>
-           <%= "&nbsp;&nbsp;" %>
-<%
-       }
-       for (int k = 1; k <= i; k++) {
-%>
-           <%= "*" %>
-<%
-       }
-%>
-       <br>
-<%
-   }
-%>
 
+<%
+    String valeurStr = request.getParameter("valeur");
+    if (valeurStr != null && !valeurStr.isEmpty()) {
+        int nombreEtoiles = Integer.parseInt(valeurStr);
+        afficherPyramide(nombreEtoiles);
+    }
+
+    void afficherPyramide(int n) {
+        for (int i = 0; i < n; i++) {
+            // Ajoute des espaces pour l'alignement au centre
+            for (int j = 0; j < n - i - 1; j++) {
+                out.print("&nbsp;");
+            }
+
+            // Ajoute des étoiles pour former la pyramide
+            for (int k = 0; k < 2 * i + 1; k++) {
+                out.print("*");
+            }
+
+            // Passage à la ligne pour la prochaine itération
+            out.println("<br>");
+        }
+    }
+%>
 
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
