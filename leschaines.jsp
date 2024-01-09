@@ -35,7 +35,7 @@
 <h2>Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?</h2>
 <p>Ecrire un programme pour compter le nombre de lettres 'e' (minuscules ou majuscules) dans votre chaîne de caractères</p>
 
-<%-- Compter le nombre de lettres 'e' dans la chaîne --%>
+<h2>Exercice 1 : Réponse </h2>
 <% int countE = 0;
    for (int i = 0; i < chaine.length(); i++) {
        char currentChar = Character.toLowerCase(chaine.charAt(i));
@@ -58,7 +58,8 @@ o</br>
 u</br>
 r</p>
 
-<%-- Afficher le texte en vertical --%>
+<h2>Exercice 2 : Réponse </h2>
+
 <% for (int i = 0; i < chaine.length(); i++) { %>
     <p><%= chaine.charAt(i) %></p>
 <% } %>
@@ -70,7 +71,8 @@ L'hiver</br>
 sera</br>
 pluvieux</p>
 
-<%-- Retour à la ligne après chaque espace --%>
+<h2>Exercice 3 : Réponse </h2>
+
 <% for (int i = 0; i < chaine.length(); i++) {
      char currentChar = chaine.charAt(i);
      if (currentChar == ' ') { %>
@@ -85,7 +87,9 @@ pluvieux</p>
 Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 
-<%-- Afficher une lettre sur deux --%>
+<h2>Exercice 4 : Réponse </h2>
+
+
 <% for (int i = 0; i < chaine.length(); i += 2) { %>
     <%= chaine.charAt(i) %>
 <% } %>
@@ -95,7 +99,8 @@ Lhvrsr lvex</p>
 Exemple : L'hiver sera pluvieux</br>
 xueivulp ares revih'l</p>
 
-<%-- Afficher le texte en verlan --%>
+<h2>Exercice 5 : Réponse </h2>
+
 <% for (int i = chaine.length() - 1; i >= 0; i--) { %>
     <%= chaine.charAt(i) %>
 <% } %>
@@ -107,7 +112,8 @@ xueivulp ares revih'l</p>
 <% int nbVoyelles = 0; %>
 <% int nbConsonnes = 0; %>
 
-<%-- Compter les voyelles et les consonnes --%>
+<h2>Exercice 6 : Réponse </h2>
+
 <% for (int i = 0; i < chaine.length(); i++) {
      char currentChar = Character.toLowerCase(chaine.charAt(i));
      if (Character.isLetter(currentChar)) {
@@ -119,7 +125,6 @@ xueivulp ares revih'l</p>
      }
 } %>
 
-<%-- Afficher les résultats --%>
 <p>Nombre de voyelles : <%= nbVoyelles %></p>
 <p>Nombre de consonnes : <%= nbConsonnes %></p>
 
