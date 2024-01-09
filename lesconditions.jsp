@@ -56,7 +56,7 @@
             <p>Oui, C est compris entre A et B.</p>
         <% } else if (intValeurC >= intValeurB && intValeurC <= intValeurA) { %>
             <p>Oui, C est compris entre A et B.</p>
-        <% } %> else { %>
+        <% } else { %>
             <p>Non, C n'est pas compris entre A et B.</p>
         <% } %>
     <% } %>
