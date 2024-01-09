@@ -1,88 +1,129 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>les conditions</title>
+<title>Les chaines</title>
 </head>
 <body bgcolor=white>
-    <h1>Exercices sur les conditions</h1>
+<h1>Exercices sur les chaines de charactères</h1>
+<form action="#" method="post">
+    <p>Saisir une chaine (Du texte avec 6 caractères minimum) : <input type="text" id="inputValeur" name="chaine">
+    <p><input type="submit" value="Afficher">
+</form>
+<%-- Récupération des valeurs --%>
+    <% String chaine = request.getParameter("chaine"); %>
+    
+    <% if (chaine != null) { %>
 
-    <form action="#" method="post">
-        <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeur1"></p>
-        <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeur2"></p>
-        <p><input type="submit" value="Afficher"></p>
-    </form>
+    <%-- Obtention de la longueur de la chaîne --%>
+    <% int longueurChaine = chaine.length(); %>
+    <p>La longueur de votre chaîne est de <%= longueurChaine %> caractères</p>
 
-    <%-- Récupération des valeurs --%>
-    <% String valeur1 = request.getParameter("valeur1"); %>
-    <% String valeur2 = request.getParameter("valeur2"); %>
+    <%-- Extraction du 3° caractère dans votre chaine --%>
+    <% char caractereExtrait = chaine.charAt(2); %>
+    <p>Le 3° caractère de votre chaine est la lettre <%= caractereExtrait %></p>
 
-    <%-- Vérification de la condition entre les deux valeurs --%>
-    <% if (valeur1 != null && valeur2 != null) { %>
-        <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int intValeur1 = Integer.parseInt(valeur1); %>
-        <% int intValeur2 = Integer.parseInt(valeur2); %>
-        
-        <%-- Condition if pour comparer les valeurs --%>
-        <% if (intValeur1 > intValeur2) { %>
-            <p>Valeur 1 est supérieure à Valeur 2.</p>
-        <% } else if (intValeur1 < intValeur2) { %>
-            <p>Valeur 1 est inférieure à Valeur 2.</p>
-        <% } else { %>
-            <p>Valeur 1 est égale à Valeur 2.</p>
-        <% } %>
-    <% } %>
-    <h2>Exercice 1 : Comparaison 1</h2>
-    <form action="#" method="post">
-        <p>Saisir la valeur A : <input type="text" id="inputValeurA" name="valeurA"></p>
-        <p>Saisir la valeur B : <input type="text" id="inputValeurB" name="valeurB"></p>
-        <p>Saisir la valeur C : <input type="text" id="inputValeurC" name="valeurC"></p>
-        <p><input type="submit" value="Afficher"></p>
-    </form>
+    <%-- Obtention d'une sous-chaîne --%>
+    <% String sousChaine = chaine.substring(2, 6); %>
+    <p>Une sous chaine de votre texte : <%= sousChaine %></p>
 
-    <%-- Récupération des valeurs --%>
-    <% String valeurA = request.getParameter("valeurA"); %>
-    <% String valeurB = request.getParameter("valeurB"); %>
-    <% String valeurC = request.getParameter("valeurC"); %>
+    <%-- Recharche de la lettre "e" --%>
+    <% char recherche = 'e'; 
+       int position = chaine.indexOf(recherche); %>
+    <p>Votre premier "e" est en : <%= position %></p>
 
-    <%-- Vérification de la condition entre les trois valeurs --%>
-    <% if (valeurA != null && valeurB != null && valeurC != null) { %>
-        <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int intValeurA = Integer.parseInt(valeurA); %>
-        <% int intValeurB = Integer.parseInt(valeurB); %>
-        <% int intValeurC = Integer.parseInt(valeurC); %>
+    
+<h2>Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?</h2>
+<p>Ecrire un programme pour compter le nombre de lettres 'e' (minuscules ou majuscules) dans votre chaîne de caractères</p>
 
-        <%-- Condition if pour vérifier si la valeur de C est comprise entre A et B --%>
-        <% if (intValeurC >= intValeurA && intValeurC <= intValeurB) { %>
-            <p>Oui, C est compris entre A et B.</p>
-        <% } else if (intValeurC >= intValeurB && intValeurC <= intValeurA) { %>
-            <p>Oui, C est compris entre A et B.</p>
-        <% } else { %>
-            <p>Non, C n'est pas compris entre A et B.</p>
-        <% } %>
-    <% } %>
-<h2>Exercice 2 : Pair ou Impair ?</h2>
-    <form action="#" method="post">
-        <p>Saisir une valeur : <input type="text" id="inputNombre" name="nombre"></p>
-        <p><input type="submit" value="Afficher"></p>
-    </form>
+<%-- Compter le nombre de lettres 'e' dans la chaîne --%>
+<% int countE = 0;
+   for (int i = 0; i < chaine.length(); i++) {
+       char currentChar = Character.toLowerCase(chaine.charAt(i));
+       if (currentChar == 'e') {
+           countE++;
+       }
+   }
+%>
 
-    <%-- Récupération de la valeur --%>
-    <% String nombre = request.getParameter("nombre"); %>
+<p>Le nombre de lettres 'e' dans votre chaîne est : <%= countE %></p>
 
-    <%-- Vérification de la parité de la valeur --%>
-    <% if (nombre != null) { %>
-        <%-- Conversion de la valeur en entier pour la vérification --%>
-        <% int intNombre = Integer.parseInt(nombre); %>
+<h2>Exercice 2 : Affichage vertical</h2>
+<p>Ecrire le programme pour afficher le texte en vertical</br>
+Exemple : Bonjour</br>
+B</br>
+o</br>
+n</br>
+j</br>
+o</br>
+u</br>
+r</p>
 
-        <%-- Condition if pour vérifier si le nombre est pair ou impair --%>
-        <% if (intNombre % 2 == 0) { %>
-            <p>Le nombre saisi est pair.</p>
-        <% } else { %>
-            <p>Le nombre saisi est impair.</p>
-        <% } %>
-    <% } %>
+<%-- Afficher le texte en vertical --%>
+<% for (int i = 0; i < chaine.length(); i++) { %>
+    <p><%= chaine.charAt(i) %></p>
+<% } %>
 
-    <p><a href="index.html">Retour au sommaire</a></p>
+<h2>Exercice 3 : Retour à la ligne</h2>
+<p>La présence d'un espace provoque un retour à la ligne </br>
+Exemple : L'hiver sera pluvieux</br>
+L'hiver</br>
+sera</br>
+pluvieux</p>
+
+<%-- Retour à la ligne après chaque espace --%>
+<% for (int i = 0; i < chaine.length(); i++) {
+     char currentChar = chaine.charAt(i);
+     if (currentChar == ' ') { %>
+        <br>
+     <% } else { %>
+        <%= currentChar %>
+     <% }
+} %>
+
+<h2>Exercice 4 : Afficher une lettre sur deux</h2>
+<p>Ecrire le programme pour afficher seulement une lettre sur deux de votre texte </br>
+Exemple : L'hiver sera pluvieux</br>
+Lhvrsr lvex</p>
+
+<%-- Afficher une lettre sur deux --%>
+<% for (int i = 0; i < chaine.length(); i += 2) { %>
+    <%= chaine.charAt(i) %>
+<% } %>
+
+<h2>Exercice 5 : La phrase en verlan</h2>
+<p>Ecrire le programme afin d'afficher le texte en verlan </br>
+Exemple : L'hiver sera pluvieux</br>
+xueivulp ares revih'l</p>
+
+<%-- Afficher le texte en verlan --%>
+<% for (int i = chaine.length() - 1; i >= 0; i--) { %>
+    <%= chaine.charAt(i) %>
+<% } %>
+
+<h2>Exercice 6 : Consonnes et voyelles</h2>
+<p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
+
+<%-- Initialisation des compteurs --%>
+<% int nbVoyelles = 0; %>
+<% int nbConsonnes = 0; %>
+
+<%-- Compter les voyelles et les consonnes --%>
+<% for (int i = 0; i < chaine.length(); i++) {
+     char currentChar = Character.toLowerCase(chaine.charAt(i));
+     if (Character.isLetter(currentChar)) {
+        if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u' || currentChar == 'y') {
+            nbVoyelles++;
+        } else {
+            nbConsonnes++;
+        }
+     }
+} %>
+
+<%-- Afficher les résultats --%>
+<p>Nombre de voyelles : <%= nbVoyelles %></p>
+<p>Nombre de consonnes : <%= nbConsonnes %></p>
+
+<% } %>
+<p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
-    
